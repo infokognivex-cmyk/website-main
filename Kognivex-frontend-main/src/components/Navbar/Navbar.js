@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import { FaBars, FaTimes, FaPalette } from 'react-icons/fa';
+import { 
+  FaBars, FaTimes, FaPalette, 
+  FaHome, FaInfoCircle, FaCogs, FaProjectDiagram, 
+  FaNewspaper, FaBriefcase, FaEnvelope, FaQuoteRight 
+} from 'react-icons/fa';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -132,6 +136,9 @@ function Navbar() {
 
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
+      {/* OVERLAY FOR MOBILE */}
+      {menuOpen && <div className={styles.overlay} onClick={() => setMenuOpen(false)}></div>}
+
       <div className={styles.container}>
         {/* LOGO */}
         <div className={styles.logo}>
@@ -140,13 +147,24 @@ function Navbar() {
 
         {/* NAV LINKS */}
         <nav className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
-          <Link to="/" className={isActive("/")}>Home</Link>
-          <Link to="/about" className={isActive("/about")}>About</Link>
-          <Link to="/services" className={isActive("/services")}>Services</Link>
-          <Link to="/projects" className={isActive("/projects")}>Projects</Link>
-          <Link to="/blog" className={isActive("/blog")}>Blog</Link>
-          <Link to="/careers" className={isActive("/careers")}>Careers</Link>
-          <Link to="/contact" className={isActive("/contact")}>Contact</Link>
+          <div className={styles.mobileHeader}>
+            <span>Navigation</span>
+            <div className={styles.closeBtn} onClick={() => setMenuOpen(false)}><FaTimes /></div>
+          </div>
+          
+          <Link to="/" className={isActive("/")}><FaHome className={styles.navIcon} /> Home</Link>
+          <Link to="/about" className={isActive("/about")}><FaInfoCircle className={styles.navIcon} /> About</Link>
+          <Link to="/services" className={isActive("/services")}><FaCogs className={styles.navIcon} /> Services</Link>
+          <Link to="/projects" className={isActive("/projects")}><FaProjectDiagram className={styles.navIcon} /> Projects</Link>
+          <Link to="/blog" className={isActive("/blog")}><FaNewspaper className={styles.navIcon} /> Blog</Link>
+          <Link to="/careers" className={isActive("/careers")}><FaBriefcase className={styles.navIcon} /> Careers</Link>
+          <Link to="/contact" className={isActive("/contact")}><FaEnvelope className={styles.navIcon} /> Contact</Link>
+          
+          <div className={styles.mobileCta}>
+             <button onClick={() => navigate("/get-quote")}>
+               <FaQuoteRight /> Get a Quote
+             </button>
+          </div>
         </nav>
 
         {/* RIGHT SIDE */}
@@ -173,10 +191,13 @@ function Navbar() {
           </button>
 
           <div
-            className={styles.menuToggle}
+            className={`${styles.menuToggle} ${menuOpen ? styles.menuOpen : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
           >
-            {menuOpen ? <FaTimes /> : <FaBars />}
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
