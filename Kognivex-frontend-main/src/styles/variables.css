@@ -1,0 +1,47 @@
+:root {
+  /* COLOR PALETTE */
+  --primary-deep: #0B1F3A;
+  --primary-royal: #1E3A8A;
+  --primary-accent: #2563EB;
+  --primary-highlight: #3B82F6;
+
+  /* BACKGROUNDS */
+  --bg-main: #F7F9FC;
+  --bg-white: #FFFFFF;
+  --bg-dark: #0F172A;
+
+  /* TEXT COLORS */
+  --text-heading: #0F172A;
+  --text-body: #475569;
+  --text-light: #E2E8F0;
+  --text-white: #FFFFFF;
+
+  /* BORDERS & SHADOWS */
+  --border-light: #E2E8F0;
+  --border-subtle: rgba(37, 99, 235, 0.1);
+  --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+
+  /* RADIUS */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* TRANSITIONS */
+  --transition: all 0.25s ease;
+
+  /* ADMIN THEME (Indigo/Blue) */
+  --admin-primary: #6366f1;
+  --admin-primary-light: #818cf8;
+  --admin-primary-glow: rgba(99, 102, 241, 0.2);
+  --admin-accent: #0ea5e9;
+  --admin-success: #10b981;
+  --admin-bg-sidebar: #0a0b10;
+  --admin-bg-main: #050608;
+
+  /* LEGACY FALLBACKS (Mapping new to old names for safety) */
+  --primary: var(--primary-accent);
+  --primary-light: var(--primary-highlight);
+  --primary-glow: rgba(37, 99, 235, 0.2);
+  --border: var(--border-light);
+}

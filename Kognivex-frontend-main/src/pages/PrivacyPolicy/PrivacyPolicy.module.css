@@ -1,0 +1,137 @@
+.legalPage {
+  background: #f8fafc;
+}
+
+/* HERO HEADER */
+.hero {
+  background: linear-gradient(135deg, #0B1F3A 0%, #1E3A8A 100%);
+  padding: 100px 0 60px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.lastUpdated {
+  color: var(--primary-highlight);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* CONTAINER — clean centered layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 40px;
+}
+
+/* Content card wrapper */
+.section {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  margin-top: 0;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 36px;
+  height: 3px;
+  background: var(--primary-accent);
+  border-radius: 2px;
+}
+
+.section p {
+  color: var(--text-body);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+.section li {
+  color: var(--text-body);
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.section strong {
+  color: var(--text-heading);
+}
+
+/* CONTACT CARD */
+.contactCard {
+  background: #f1f5f9;
+  padding: 20px 24px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-top: 12px;
+}
+
+.contactCard p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.contactCard a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contactCard a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 50px;
+  }
+
+  .container {
+    padding: 20px 16px 30px;
+  }
+
+  .section {
+    padding: 20px 20px;
+  }
+}

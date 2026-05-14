@@ -1,0 +1,822 @@
+.projectsPage {
+  background: var(--bg-main);
+  color: var(--text-body);
+}
+
+/* HERO SECTION - SYNCED WITH SERVICES */
+.hero {
+  background: linear-gradient(rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 0.95)), url('../../assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 160px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroBadge {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-highlight);
+  padding: 8px 24px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 24px;
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--primary-highlight), var(--primary-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  color: #CBD5E1;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* FILTER SECTION */
+.filterSection {
+  padding: 40px 0;
+  background: var(--bg-main);
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterContainer {
+  position: relative;
+  width: 100%;
+}
+
+.scrollArrow {
+  display: none;
+  /* Hidden by default on desktop */
+}
+
+.filterBtn {
+  padding: 10px 24px;
+  border-radius: 100px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filterBtn:hover {
+  border-color: var(--primary-highlight);
+  color: var(--primary-highlight);
+}
+
+.filterBtn.active {
+  background: var(--primary-highlight);
+  border-color: var(--primary-highlight);
+  color: #FFFFFF;
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
+}
+
+/* PROJECT GRID - NEON SYNCED */
+.gridSection {
+  padding: 80px 0 120px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.projectCard {
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-dark);
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  padding: 15px;
+}
+
+.neonBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 50%, var(--primary-highlight) 0%, transparent 60%);
+  opacity: 0.1;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.neonGlass {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.content {
+  padding: 25px 25px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  margin-bottom: 12px;
+}
+
+.cardHeader h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featuresPreview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.featureTag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  background: var(--bg-main);
+  color: var(--text-body);
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 36px;
+}
+
+.featureTag:nth-child(3) {
+  grid-column: 1 / span 2;
+  justify-self: center;
+  width: fit-content;
+  min-width: 140px;
+}
+
+.viewBtn {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: none;
+  border-top: 1px solid var(--border-color);
+  color: var(--primary-highlight);
+  padding: 18px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: auto;
+}
+
+.projectCard:hover .viewBtn {
+  background: var(--primary-highlight);
+  color: #FFFFFF;
+}
+
+/* CTA - SYNCED WITH GLOBAL LAYOUT */
+.ctaSection {
+  padding: 40px 0 80px;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: center;
+}
+
+.ctaBannerWrapper {
+  max-width: 1440px;
+  /* Matching maximum container width */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.ctaBanner {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--border-color);
+  border-top: 3px solid var(--primary-highlight);
+  border-radius: 30px;
+  padding: 45px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.ctaContent h2 {
+  font-size: 3rem;
+  color: var(--text-heading);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.ctaContent p {
+  color: var(--text-body);
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+.ctaButton {
+  background: var(--primary-highlight);
+  color: #FFFFFF;
+  padding: 20px 50px;
+  border-radius: 100px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.4);
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 25px 40px rgba(var(--primary-rgb), 0.6);
+}
+
+/* MODAL OVERLAY - UNIQUE EXPERIENCE */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 1300px;
+  height: 85vh;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px) scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-heading);
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: var(--primary-highlight);
+  color: #FFFFFF;
+  transform: rotate(90deg);
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  height: 100%;
+}
+
+/* LEFT: IMAGE PANE */
+.modalImagePane {
+  position: relative;
+  height: 100%;
+  background: #000000;
+  overflow: hidden;
+}
+
+.modalImagePane img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.modalImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.modalBadge {
+  display: inline-block;
+  background: var(--primary-highlight);
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.modalImageOverlay h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* RIGHT: INFO PANE */
+.modalInfoPane {
+  padding: 60px;
+  overflow-y: auto;
+  background: var(--bg-card);
+}
+
+/* Scrollbar styling */
+.modalInfoPane::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalInfoPane::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalInfoPane::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.modalSection {
+  margin-bottom: 50px;
+}
+
+.modalSection h3 {
+  font-size: 0.85rem;
+  color: var(--primary-highlight);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.modalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.modalGrid h4 {
+  font-size: 1.4rem;
+  color: var(--text-heading);
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.modalAnalysis p {
+  font-size: 1.15rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.modalFeatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.modalFeature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-main);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.modalFeature span {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.checkIcon {
+  color: var(--primary-highlight);
+}
+
+.modalImpactCard {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  padding: 40px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.impactIcon {
+  font-size: 3rem;
+  color: var(--primary-highlight);
+  flex-shrink: 0;
+}
+
+.modalImpactCard p {
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.modalFooter {
+  padding-top: 20px;
+}
+
+.modalCta {
+  background: var(--primary-highlight);
+  color: #FFFFFF;
+  padding: 20px 45px;
+  border-radius: 100px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.4);
+}
+
+.modalCta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.6);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLETS (1200px and below) */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .modalContent {
+    max-width: 95%;
+    height: 90vh;
+  }
+}
+
+/* TABLETS & SMALL LAPTOPS (1024px and below) */
+@media (max-width: 1024px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImagePane {
+    height: 400px;
+  }
+
+  .modalImageOverlay h2 {
+    font-size: 2.5rem;
+  }
+
+  .modalInfoPane {
+    padding: 40px;
+  }
+
+  .ctaBanner {
+    padding: 40px;
+    gap: 30px;
+  }
+}
+
+/* MOBILE DEVICES (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+
+  .filterSection {
+    top: 70px;
+    padding: 15px 0;
+    border-bottom: none;
+  }
+
+  .filterContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .scrollArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    color: var(--primary-highlight);
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-75%);
+    /* Offset for the 15px bottom padding */
+    z-index: 5;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+  }
+
+  .scrollArrow:hover {
+    background: var(--primary-highlight);
+    color: #FFFFFF;
+    transform: scale(1.1);
+  }
+
+  .scrollArrow:active {
+    transform: scale(0.9);
+  }
+
+  .scrollArrow:first-child {
+    left: 5px;
+  }
+
+  .scrollArrow:last-child {
+    right: 5px;
+  }
+
+  .filterBar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 45px 15px;
+    /* Added padding for arrows */
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filterBar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Chrome/Safari */
+
+  .filterBtn {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .gridSection {
+    padding: 40px 0 80px;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .modalOverlay {
+    padding: 15px;
+  }
+
+  .modalContent {
+    border-radius: 30px;
+    height: 85vh;
+    max-width: 100%;
+  }
+
+  .modalInfoPane {
+    padding: 30px 20px;
+  }
+
+  .modalGrid,
+  .modalFeatures {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modalImagePane {
+    height: 280px;
+  }
+
+  .modalImageOverlay {
+    padding: 30px 20px;
+  }
+
+  .modalImageOverlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .ctaSection {
+    padding: 20px 0 60px;
+  }
+
+  .ctaBanner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .ctaContent {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .ctaContent h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+/* SMALL MOBILE (480px and below) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .modalImagePane {
+    height: 280px;
+  }
+
+  .modalImpactCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .modalImpactCard p {
+    font-size: 1.1rem;
+  }
+
+  .closeBtn {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}

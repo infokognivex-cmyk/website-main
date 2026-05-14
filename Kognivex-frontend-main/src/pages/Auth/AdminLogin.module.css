@@ -1,0 +1,331 @@
+.loginPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00020a;
+  position: relative;
+  overflow: hidden;
+  perspective: 2000px;
+  padding: 24px;
+}
+
+/* 🖱️ INTERACTIVE MOUSE GLOW */
+.mouseGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  filter: blur(60px);
+}
+
+/* 🕸️ GRID & SCANLINES */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(var(--primary-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  z-index: 0;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 3px 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* 📦 PRISM CARD */
+.loginCard {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(10, 15, 30, 0.6);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
+  transform-style: preserve-3d;
+}
+
+/* ✨ DECORATIVE ELEMENTS */
+.cornerTL {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--primary-highlight);
+  border-left: 2px solid var(--primary-highlight);
+  border-radius: 10px 0 0 0;
+}
+
+.cornerBR {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 40px;
+  height: 40px;
+  border-bottom: 2px solid var(--primary-highlight);
+  border-right: 2px solid var(--primary-highlight);
+  border-radius: 0 0 10px 0;
+}
+
+.sideGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(var(--primary-rgb), 0.05), transparent);
+  pointer-events: none;
+}
+
+.cardContent {
+  padding: 60px;
+  text-align: center;
+}
+
+.logoBox {
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border: 1px solid var(--primary-highlight);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--primary-highlight);
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sepLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-highlight), transparent);
+}
+
+.sepDot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-highlight);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--primary-highlight);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.fieldGroup {
+  position: relative;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fieldIcon {
+  position: absolute;
+  left: 15px;
+  font-size: 1.1rem;
+  color: var(--primary-highlight);
+  z-index: 2;
+}
+
+.inputContainer input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px 16px 16px 45px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: monospace;
+  transition: all 0.3s ease;
+}
+
+.inputContainer input:focus {
+  outline: none;
+  border-color: var(--primary-highlight);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.2);
+}
+
+.fieldLabel {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: #0a0f1e;
+  padding: 0 8px;
+  font-size: 0.7rem;
+  color: var(--primary-highlight);
+  font-weight: 800;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.errorIndicator {
+  width: 20px;
+  height: 20px;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.authBtn {
+  position: relative;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--primary-highlight);
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btnBackground {
+  position: absolute;
+  inset: 0;
+  background: var(--primary-highlight);
+  opacity: 0.1;
+  transition: all 0.4s ease;
+}
+
+.authBtn:hover .btnBackground {
+  opacity: 1;
+}
+
+.authBtn:hover {
+  box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.4);
+  color: #000;
+}
+
+.systemStatus {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statusGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+.statusText {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    padding: 40px 24px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .cardContent {
+    padding: 30px 40px;
+  }
+  .subtitle {
+    margin-bottom: 25px;
+  }
+  .systemStatus {
+    margin-top: 25px;
+  }
+  .logoBox {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,356 @@
+.container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 50px;
+  background: #0a0b10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  color: #fff;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.6));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.section {
+  margin-bottom: 35px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #00f2ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.input, .textarea, .select {
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-color: #00f2ff;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.textarea {
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tag button {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.addInput {
+  display: flex;
+  gap: 15px;
+}
+
+.addInput input {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: #fff;
+}
+
+.addInput button {
+  padding: 0 25px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.submitBtn {
+  background: var(--admin-primary);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: var(--admin-primary-light);
+  box-shadow: 0 10px 20px var(--admin-primary-glow);
+  transform: translateY(-2px);
+}
+
+.cancelBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.message {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.success {
+  background: var(--admin-primary-glow);
+  border: 1px solid var(--admin-primary);
+  color: var(--admin-primary-light);
+}
+
+.errorMsg {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.backBtn:hover {
+  color: #fff;
+}
+
+/* Responsive Designs */
+@media (max-width: 1024px) {
+  .container {
+    margin: 40px 20px;
+    padding: 40px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    margin: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .addInput {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .addInput button {
+    padding: 14px;
+    width: 100%;
+  }
+
+  .buttonGroup {
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .submitBtn, .cancelBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+    margin: 10px 5px;
+    border-radius: 12px;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h2 {
+    font-size: 1rem;
+  }
+
+  .input, .textarea, .select {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

@@ -1,0 +1,247 @@
+.detailsPage {
+  background: var(--bg-main) !important;
+  color: var(--text-body);
+  min-height: 100vh;
+  padding-bottom: 120px;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.5s ease;
+}
+
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--primary-highlight);
+  z-index: 1000;
+  transition: width 0.1s ease-out;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.headerNav {
+  padding-top: 120px;
+  margin-bottom: 40px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary-highlight);
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.backLink:hover {
+  transform: translateX(-8px);
+}
+
+/* PREMIUM VERTICAL HERO */
+.heroImage {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  margin-bottom: 60px;
+}
+
+.titleArea {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--text-heading);
+  margin-bottom: 25px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.title span {
+  color: var(--primary-highlight) !important;
+}
+
+.meta {
+  display: flex;
+  gap: 30px;
+  color: var(--text-body);
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meta svg {
+  color: var(--primary-highlight);
+}
+
+/* CONTENT AREA - STARTING BELOW IMAGE */
+.content {
+  color: var(--text-body);
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+.excerpt {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 60px;
+  line-height: 1.4;
+  border-left: 5px solid var(--primary-highlight);
+  padding-left: 30px;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  color: var(--text-heading);
+  margin: 80px 0 30px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.content p {
+  margin-bottom: 40px;
+}
+
+.content ul {
+  margin: 50px 0;
+  padding: 40px;
+  background: rgba(var(--primary-rgb), 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+}
+
+.content li {
+  margin-bottom: 20px;
+  list-style: none;
+  position: relative;
+  padding-left: 30px;
+  font-weight: 600;
+}
+
+.content li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-highlight);
+  font-weight: 900;
+}
+
+/* PREMIUM CTA FOOTER */
+.footer {
+  margin-top: 120px;
+  padding: 80px 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.footer h3 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--text-heading);
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.footer p {
+  color: var(--text-body);
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .headerNav {
+    padding-top: 90px;
+    margin-bottom: 30px;
+  }
+
+  .heroImage {
+    height: 35vh;
+    min-height: 250px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .excerpt {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    padding-left: 15px;
+  }
+
+  .content h2 {
+    font-size: 1.75rem;
+    margin: 40px 0 20px;
+  }
+
+  .footer {
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-radius: 24px;
+  }
+
+  .footer h3 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+}
