@@ -4,7 +4,8 @@ import styles from './Home.module.css';
 import { 
   FaCode, FaMobileAlt, FaCloud, FaCogs, FaWordpress,
   FaRocket, FaShieldAlt, FaChartLine, FaUsers, 
-  FaCheck, FaQuoteLeft, FaBriefcase, FaAward, FaCalendarAlt
+  FaCheck, FaQuoteLeft, FaBriefcase, FaAward, FaCalendarAlt,
+  FaBrain, FaBolt, FaArrowRight
 } from 'react-icons/fa';
 import Counter from '../../components/Common/Counter';
 import SEO from '../../components/SEO/SEO';
@@ -51,20 +52,70 @@ function Home() {
       {/* HERO SECTION */}
       <section className={styles.hero}>
         <div className={styles.container}>
-          <div className={styles.heroContent}>
-            <h1>Web Development & SaaS Solutions <span className={styles.highlight}>Company</span></h1>
-            <h2 className={styles.subtitle}>Build Scalable Software That Grows Your Business</h2>
-            <p>
-              Kognivex is a leading web development and SaaS solutions company helping 
-              startups and businesses build scalable, high-performance applications.
-            </p>
-            <div className={styles.heroBtns}>
-              <button onClick={() => navigate('/get-quote')} className={styles.primaryBtn}>
-                Start Your Project <FaRocket style={{ marginLeft: '10px' }} />
-              </button>
-              <button onClick={() => navigate('/services')} className={styles.secondaryBtn}>
-                Explore Services
-              </button>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroContent}>
+              <div className={styles.heroBadge}>
+                <span>AI</span> • <span>AUTOMATION</span> • <span>INNOVATION</span>
+              </div>
+              <h1>
+                <span className={styles.aiHighlight}>AI-POWERED</span> SOLUTIONS.<br />
+                REAL BUSINESS IMPACT.
+              </h1>
+              <p className={styles.heroDescription}>
+                We build intelligent digital products, enterprise systems, and premium websites 
+                that help businesses automate, scale, and grow in the digital era.
+              </p>
+
+              <div className={styles.featureGrid}>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}><FaBrain /></div>
+                  <div className={styles.featureText}>
+                    <h4>AI Integration</h4>
+                    <span>Smarter Workflows</span>
+                  </div>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}><FaChartLine /></div>
+                  <div className={styles.featureText}>
+                    <h4>Scalable Systems</h4>
+                    <span>Built for Growth</span>
+                  </div>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}><FaShieldAlt /></div>
+                  <div className={styles.featureText}>
+                    <h4>Secure & Reliable</h4>
+                    <span>Enterprise Grade</span>
+                  </div>
+                </div>
+                <div className={styles.featureItem}>
+                  <div className={styles.featureIcon}><FaBolt /></div>
+                  <div className={styles.featureText}>
+                    <h4>Performance Driven</h4>
+                    <span>Fast & Optimized</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.heroBtns}>
+                <button onClick={() => navigate('/projects')} className={styles.primaryBtn}>
+                  Explore Our Work <FaArrowRight style={{ marginLeft: '10px' }} />
+                </button>
+                <button onClick={() => navigate('/contact')} className={styles.secondaryBtn}>
+                  Book a Free Consultation <FaCalendarAlt style={{ marginLeft: '10px' }} />
+                </button>
+              </div>
+            </div>
+
+            <div className={styles.heroImageContainer}>
+              <div className={styles.dashboardMockup}>
+                <img 
+                  src={require('../../assets/hero-dashboard.png')} 
+                  alt="Kognivex Dashboard" 
+                  className={styles.dashboardImg}
+                />
+                <div className={styles.imageGlow}></div>
+              </div>
             </div>
           </div>
         </div>
