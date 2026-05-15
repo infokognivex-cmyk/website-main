@@ -73,9 +73,53 @@ function BlogDetails() {
 
   const renderContent = (text) => {
     if (!text) return null;
-    return text.split('\n').map((para, i) => (
-      para.trim() ? <p key={i}>{para}</p> : <br key={i} />
-    ));
+    const lines = text.split('\n');
+    const result = [];
+    let currentList = [];
+
+    const flushList = (key) => {
+      if (currentList.length > 0) {
+        result.push(
+          <ul key={key} className={styles.articleList}>
+            {currentList.map((item, idx) => <li key={idx}>{item}</li>)}
+          </ul>
+        );
+        currentList = [];
+      }
+    };
+
+    lines.forEach((line, i) => {
+      const trimmedLine = line.trim();
+      if (!trimmedLine) return;
+
+      // 1. Explicit list detection (- or * or 1.)
+      const isExplicitList = trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ') || (trimmedLine.match(/^\d+\.\s/) && !isNaN(parseInt(trimmedLine)));
+      
+      // 2. Implicit list detection (short lines after a line ending with :)
+      const prevLine = i > 0 ? lines[i-1].trim() : '';
+      const isImplicitList = (prevLine.endsWith(':') || currentList.length > 0) && trimmedLine.length < 100 && !trimmedLine.endsWith('.');
+
+      if (isExplicitList || isImplicitList) {
+        const content = isExplicitList 
+          ? (trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ') ? trimmedLine.substring(2) : trimmedLine.replace(/^\d+\.\s/, ''))
+          : trimmedLine;
+        currentList.push(content);
+      } else {
+        flushList(`list-${i}`);
+        
+        // Check if it's a heading
+        const isHeading = (trimmedLine.length < 80 && !trimmedLine.endsWith('.') && (trimmedLine === trimmedLine.toUpperCase() || trimmedLine.endsWith(':')));
+        
+        if (isHeading) {
+          result.push(<h3 key={i} className={styles.subHeading}>{trimmedLine}</h3>);
+        } else {
+          result.push(<p key={i}>{trimmedLine}</p>);
+        }
+      }
+    });
+
+    flushList('list-final');
+    return result;
   };
 
   return (
@@ -125,30 +169,30 @@ function BlogDetails() {
           </div>
 
           {blog.key_challenges && (
-            <>
-              <h2>Key Challenges</h2>
+            <section className={styles.specialSection}>
+              <h2 className={styles.sectionTitle}>Key Challenges</h2>
               <div className={styles.challenges}>
                 {renderContent(blog.key_challenges)}
               </div>
-            </>
+            </section>
           )}
 
           {blog.implementation_framework && (
-            <>
-              <h2>Strategic Implementation Framework</h2>
+            <section className={styles.specialSection}>
+              <h2 className={styles.sectionTitle}>Strategic Implementation Framework</h2>
               <div className={styles.framework}>
                 {renderContent(blog.implementation_framework)}
               </div>
-            </>
+            </section>
           )}
 
           {blog.future_outlook && (
-            <>
-              <h2>Looking Ahead</h2>
+            <section className={styles.specialSection}>
+              <h2 className={styles.sectionTitle}>Looking Ahead</h2>
               <div className={styles.outlook}>
                 {renderContent(blog.future_outlook)}
               </div>
-            </>
+            </section>
           )}
         </div>
 

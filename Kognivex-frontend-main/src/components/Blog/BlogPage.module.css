@@ -1,12 +1,13 @@
 .blogPage {
   background: var(--bg-main) !important;
-  background-image: 
+  background-image:
     radial-gradient(at 0% 0%, rgba(var(--primary-rgb), 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(var(--primary-rgb), 0.05) 0px, transparent 50%) !important;
   color: var(--text-body);
   min-height: 100vh;
   transition: background 0.5s ease;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
 }
 
 /* HERO SECTION - SYNCED WITH PROJECTS */
@@ -107,7 +108,8 @@
 }
 
 .scrollArrow {
-  display: none; /* Hidden on desktop */
+  display: none;
+  /* Hidden on desktop */
 }
 
 .categoryFilters {
@@ -208,7 +210,8 @@
   align-items: center;
   gap: 10px;
   padding-bottom: 100px;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on small screens */
 }
 
 .pageBtn {
@@ -292,14 +295,20 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
-  .scrollArrow:first-child { left: 5px; }
-  .scrollArrow:last-child { right: 5px; }
+  .scrollArrow:first-child {
+    left: 5px;
+  }
+
+  .scrollArrow:last-child {
+    right: 5px;
+  }
 
   .categoryFilters {
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 5px 30px 15px; /* Space for arrows */
+    padding: 5px 30px 15px;
+    /* Space for arrows */
     gap: 10px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
