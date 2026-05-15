@@ -13,7 +13,7 @@ export const BlogProvider = ({ children }) => {
         const publishedBlogs = (allBlogs || []).filter((b) => b.status === 'published');
         setBlogs(publishedBlogs);
       } catch (error) {
-        console.warn('Unable to load blogs from backend.');
+        console.warn('Unable to load blogs from backend:', error.message);
       }
     };
 

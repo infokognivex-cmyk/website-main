@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: ["https://kognivex.in", "https://website-frountend.onrender.com", "http://localhost:3000"],
+  origin: ["https://kognivex.in", "https://website-frountend.onrender.com", "http://localhost:3000", "http://localhost:3001", "http://localhost:5173"],
   credentials: true
 }));
 app.use(express.json());
