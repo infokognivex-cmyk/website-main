@@ -1,0 +1,21 @@
+{
+  "name": "Kognivex",
+  "short_name": "Kognivex",
+  "description": "Kognivex builds scalable web applications, SaaS platforms, and enterprise software solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/Logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
