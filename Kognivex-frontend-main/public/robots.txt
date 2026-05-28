@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin-login
 
 # Sitemaps
 Sitemap: https://kognivex.in/sitemap.xml

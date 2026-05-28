@@ -7,7 +7,8 @@ export function updateSeo({
   description = "Kognivex builds scalable web applications, SaaS platforms, and enterprise software.",
   keywords = "web development, SaaS, software development, IT company",
   image = "/og-image.jpg",
-  url = window.location.href
+  url = window.location.href,
+  robots = "index, follow"
 }) {
 
   // TITLE
@@ -38,6 +39,7 @@ export function updateSeo({
   // BASIC SEO
   setMeta("description", description);
   setMeta("keywords", keywords);
+  setMeta("robots", robots);
 
   // OPEN GRAPH
   setOG("og:title", title);

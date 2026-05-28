@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, keywords, image, url, type = 'website' }) => {
+const SEO = ({ title, description, keywords, image, url, type = 'website', robots = 'index, follow' }) => {
   const siteName = 'Kognivex';
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | AI, SaaS & Web Development Solutions`;
   const defaultDescription = 'Kognivex builds scalable web applications, SaaS platforms, and enterprise software solutions for startups and businesses.';
@@ -14,6 +14,7 @@ const SEO = ({ title, description, keywords, image, url, type = 'website' }) => 
       <title>{fullTitle}</title>
       <meta name="description" content={description || defaultDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={url || defaultUrl} />
 
       {/* Open Graph / Facebook */}

@@ -14,7 +14,7 @@ function Footer() {
           <div className={styles.info}>
             <h3>Kognivex</h3>
             <p>
-              Engineering high-performance digital solutions for ambitious enterprises. 
+              Engineering high-performance digital solutions for ambitious enterprises.
               We build the future of SaaS, one pixel at a time.
             </p>
           </div>
@@ -52,7 +52,7 @@ function Footer() {
 
         {/* BOTTOM BAR */}
         <div className={styles.bottomBar}>
-          <p>© 2026 Kognivex IT Solutions. All rights reserved.</p>
+          <p>© 2024 Kognivex IT Solutions. All rights reserved.</p>
           <div className={styles.socials}>
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn"><FaLinkedin /></a>
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Twitter"><FaTwitter /></a>

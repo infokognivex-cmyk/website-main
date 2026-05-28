@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { updateSeo } from '../../utils/seoHelper';
 import styles from './About.module.css';
-import { 
-  FaUsers, FaLightbulb, FaShieldAlt, FaRocket, 
+import {
+  FaUsers, FaLightbulb, FaShieldAlt, FaRocket,
   FaCode, FaChartLine, FaCheck, FaAward, FaCogs
 } from 'react-icons/fa';
 import Counter from '../../components/Common/Counter';
@@ -67,6 +67,42 @@ function About() {
       description: "Specializes in high-performance backend systems and enterprise-grade Java applications.",
       image: null,
       tech: ["Spring", "Kafka", "Redis"]
+    },
+    {
+      "name": "Ch.Vamsi",
+      "role": "App Developer",
+      "xp": "3+ Years",
+      "focus": "Mobile Apps",
+      "description": "Passionate app developer focused on building responsive and user-friendly mobile applications.",
+      "image": null,
+      "tech": ["Flutter", "Firebase", "Android"]
+    },
+    {
+      "name": "Shaik Shahanaz",
+      "role": "App Developer",
+      "xp": "2+ Years",
+      "focus": "Cross Platform",
+      "description": "Develops modern cross-platform mobile applications with smooth UI and optimized performance.",
+      "image": null,
+      "tech": ["React Native", "Firebase", "JavaScript"]
+    },
+    {
+      "name": "P.Afrin",
+      "role": "WordPress Developer",
+      "xp": "4+ Years",
+      "focus": "Web Development",
+      "description": "Experienced in creating dynamic and responsive WordPress websites with custom themes and plugins.",
+      "image": null,
+      "tech": ["WordPress", "PHP", "Elementor"]
+    },
+    {
+      "name": "Shaik Abubakar",
+      "role": ".NET Developer",
+      "xp": "5+ Years",
+      "focus": "Backend Development",
+      "description": "Skilled .NET developer specializing in scalable enterprise applications and API development.",
+      "image": null,
+      "tech": ["C#", ".NET", "SQL Server"]
     }
   ];
 
@@ -78,7 +114,7 @@ function About() {
           <div className={styles.heroContent}>
             <h1>Engineering <span className={styles.highlight}>Excellence</span></h1>
             <p>
-              At Kognivex, we don't just build software. We engineer high-performance 
+              At Kognivex, we don't just build software. We engineer high-performance
               digital assets that scale with your business ambition.
             </p>
             <div className={styles.heroBtns}>
@@ -100,18 +136,18 @@ function About() {
                 <div className={styles.philBadge}>Strategic Vision</div>
                 <h2>Our <span className={styles.highlight}>Philosophy</span></h2>
                 <p>
-                  Founded on the principles of elite craftsmanship and strategic innovation, 
-                  Kognivex was born to bridge the gap between complex engineering and 
+                  Founded on the principles of elite craftsmanship and strategic innovation,
+                  Kognivex was born to bridge the gap between complex engineering and
                   world-class user experience.
                 </p>
                 <p>
-                  We believe that every line of code should serve a business purpose. 
-                  Our team works at the intersection of robust architecture and 
+                  We believe that every line of code should serve a business purpose.
+                  Our team works at the intersection of robust architecture and
                   seamless design to deliver products that aren't just functional—they're transformative.
                 </p>
                 <div className={styles.philChecklist}>
-                   <div className={styles.checkItem}><FaCheck /> <span>Business Centric Engineering</span></div>
-                   <div className={styles.checkItem}><FaCheck /> <span>Scalable Cloud Architecture</span></div>
+                  <div className={styles.checkItem}><FaCheck /> <span>Business Centric Engineering</span></div>
+                  <div className={styles.checkItem}><FaCheck /> <span>Scalable Cloud Architecture</span></div>
                 </div>
               </div>
 
@@ -160,7 +196,7 @@ function About() {
             <h2>Elite Engineering <span className={styles.highlight}>Pillars</span></h2>
             <p>Our core values define every project we undertake and every partnership we build.</p>
           </div>
-          
+
           <div className={styles.standardRowGrid}>
             <div className={styles.rowCard}>
               <div className={styles.cardGlow}></div>
